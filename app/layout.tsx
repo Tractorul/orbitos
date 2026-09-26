@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import { ServiceWorkerRegister } from "@/components/pwa/ServiceWorkerRegister";
+import { Analytics } from '@vercel/analytics/next';
 
 export const metadata: Metadata = {
   title: "Orbit",
@@ -59,6 +60,7 @@ export default function RootLayout({
 
         <ServiceWorkerRegister />
         {children}
+        <Analytics />
       </body>
     </html>
   );
