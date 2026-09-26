@@ -1,0 +1,197 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #070A0F;
+  --foreground: #ECEFF4;
+  
+  /* Refined Nord Tokens */
+  --nord-bg-deep: #070A0F;
+  --nord-bg-surface: rgba(15, 22, 35, 0.65);
+  --nord-bg-surface-hover: rgba(22, 32, 50, 0.8);
+  --nord-bg-card: rgba(18, 26, 42, 0.6);
+  --nord-border: rgba(255, 255, 255, 0.08);
+  --nord-border-light: rgba(255, 255, 255, 0.12);
+  --nord-border-glow: rgba(136, 192, 208, 0.35);
+
+  --nord-text-primary: #F0F4F8;
+  --nord-text-secondary: #94A3B8;
+  --nord-text-muted: #64748B;
+
+  /* Nord Accent Accents */
+  --nord-cyan: #88C0D0;
+  --nord-blue: #81A1C1;
+  --nord-frost: #5E81AC;
+  --nord-teal: #8FBCBB;
+  
+  /* Aurora Accents */
+  --nord-red: #BF616A;
+  --nord-orange: #D08770;
+  --nord-yellow: #EBCB8B;
+  --nord-green: #A3BE8C;
+  --nord-purple: #B48EAD;
+
+  /* Safe Area Insets for Mobile / iOS PWAs */
+  --sat: env(safe-area-inset-top, 0px);
+  --sab: env(safe-area-inset-bottom, 0px);
+  --sal: env(safe-area-inset-left, 0px);
+  --sar: env(safe-area-inset-right, 0px);
+}
+
+* {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  overflow-x: hidden;
+  letter-spacing: -0.01em;
+}
+
+input,
+textarea,
+select,
+[contenteditable="true"] {
+  user-select: text;
+  -webkit-user-select: text;
+}
+
+/* Atmospheric Ambient Background */
+.ambient-bg {
+  background-color: #070A0F;
+  background-image: 
+    radial-gradient(at 15% 10%, rgba(30, 45, 75, 0.35) 0px, transparent 55%),
+    radial-gradient(at 85% 25%, rgba(20, 40, 60, 0.25) 0px, transparent 50%),
+    radial-gradient(at 50% 80%, rgba(25, 35, 55, 0.3) 0px, transparent 65%),
+    radial-gradient(at 90% 90%, rgba(15, 30, 50, 0.25) 0px, transparent 50%);
+  background-attachment: fixed;
+}
+
+/* Premium Glassmorphism Surfaces */
+.glass-card {
+  background: rgba(16, 23, 37, 0.62);
+  backdrop-filter: blur(20px) saturate(190%);
+  -webkit-backdrop-filter: blur(20px) saturate(190%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 
+    0 10px 30px -5px rgba(0, 0, 0, 0.45),
+    inset 0 1px 1px 0 rgba(255, 255, 255, 0.09);
+}
+
+.glass-card-accent {
+  background: linear-gradient(135deg, rgba(24, 38, 62, 0.65) 0%, rgba(14, 21, 35, 0.75) 100%);
+  backdrop-filter: blur(24px) saturate(200%);
+  -webkit-backdrop-filter: blur(24px) saturate(200%);
+  border: 1px solid rgba(136, 192, 208, 0.22);
+  box-shadow: 
+    0 12px 36px -6px rgba(0, 0, 0, 0.5),
+    0 0 24px -6px rgba(136, 192, 208, 0.15),
+    inset 0 1px 1px 0 rgba(255, 255, 255, 0.15);
+}
+
+.glass-card-interactive {
+  background: rgba(16, 23, 37, 0.62);
+  backdrop-filter: blur(20px) saturate(190%);
+  -webkit-backdrop-filter: blur(20px) saturate(190%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 
+    0 8px 24px -4px rgba(0, 0, 0, 0.4),
+    inset 0 1px 1px 0 rgba(255, 255, 255, 0.08);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-card-interactive:hover {
+  background: rgba(24, 34, 54, 0.75);
+  border-color: rgba(136, 192, 208, 0.3);
+  box-shadow: 
+    0 12px 32px -4px rgba(0, 0, 0, 0.55),
+    0 0 18px -4px rgba(136, 192, 208, 0.2),
+    inset 0 1px 1px 0 rgba(255, 255, 255, 0.12);
+  transform: translateY(-1px);
+}
+
+.glass-card-interactive:active {
+  transform: scale(0.985);
+  background: rgba(18, 26, 42, 0.85);
+}
+
+.glass-pill {
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  box-shadow: inset 0 1px 0.5px 0 rgba(255, 255, 255, 0.1);
+}
+
+.glass-nav {
+  background: rgba(11, 17, 28, 0.78);
+  backdrop-filter: blur(24px) saturate(210%);
+  -webkit-backdrop-filter: blur(24px) saturate(210%);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 
+    0 16px 40px -8px rgba(0, 0, 0, 0.65),
+    inset 0 1px 1px 0 rgba(255, 255, 255, 0.12);
+}
+
+.glass-input {
+  background: rgba(11, 17, 28, 0.65);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.3);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-input:focus {
+  border-color: rgba(136, 192, 208, 0.5);
+  box-shadow: 
+    0 0 0 3px rgba(136, 192, 208, 0.15),
+    inset 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+/* Subtle Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.14);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+/* Safe areas */
+.pb-safe {
+  padding-bottom: max(1.25rem, env(safe-area-inset-bottom, 1.25rem));
+}
+
+.pt-safe {
+  padding-top: max(0.75rem, env(safe-area-inset-top, 0.75rem));
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

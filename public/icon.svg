@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <radialGradient id="bgGrad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#1E2838" />
+      <stop offset="100%" stop-color="#090D14" />
+    </radialGradient>
+    <linearGradient id="orbitGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#88C0D0" />
+      <stop offset="50%" stop-color="#81A1C1" />
+      <stop offset="100%" stop-color="#5E81AC" />
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="12" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="512" height="512" rx="112" fill="url(#bgGrad)" />
+  <rect width="504" height="504" x="4" y="4" rx="108" fill="none" stroke="rgba(255, 255, 255, 0.08)" stroke-width="2" />
+
+  <!-- Outer Orbit Ring -->
+  <ellipse cx="256" cy="256" rx="170" ry="85" fill="none" stroke="rgba(136, 192, 208, 0.35)" stroke-width="6" stroke-dasharray="12 12" transform="rotate(-28 256 256)" />
+
+  <!-- Inner Orbit Ring -->
+  <ellipse cx="256" cy="256" rx="140" ry="70" fill="none" stroke="url(#orbitGrad)" stroke-width="8" transform="rotate(32 256 256)" />
+
+  <!-- Core Celestial Body -->
+  <circle cx="256" cy="256" r="44" fill="#ECEFF4" filter="url(#glow)" />
+  <circle cx="256" cy="256" r="38" fill="#88C0D0" />
+  <circle cx="244" cy="244" r="14" fill="#ECEFF4" opacity="0.85" />
+
+  <!-- Orbiting Nodes -->
+  <circle cx="360" cy="190" r="12" fill="#88C0D0" filter="url(#glow)" />
+  <circle cx="150" cy="330" r="8" fill="#81A1C1" />
+  <circle cx="370" cy="310" r="6" fill="#8FBCBB" />
+</svg>
